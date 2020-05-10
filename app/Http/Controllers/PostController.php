@@ -72,9 +72,4 @@ class PostController extends Controller
         $post->delete();
         return redirect('/')->with('delete', 'Post deleted');
     }
-
-    public static function convert($data)
-    {
-        return Carbon::parse($data)->format('m/d/Y');
-    }
 }
