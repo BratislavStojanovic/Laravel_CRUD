@@ -15,7 +15,7 @@
           <p>{{$post->body}}</p>
           </div>
           <div class="card-action">
-          <a href="#">{{$post->author}}</a>
+          <a href="#">{{$post->user->name}}</a>
           <a href="#" class="right">{{convert($post->created_at)}}</a>
           <a href="{{$post->id}}/edit">Edit post</a>
           <a href="{{$post->id}}/delete">Delete post</a>

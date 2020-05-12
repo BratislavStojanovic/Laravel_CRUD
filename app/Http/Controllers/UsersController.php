@@ -21,6 +21,13 @@ class UsersController extends Controller
         ]);
     }
 
+    public function posts(User $user)
+    {
+        $allPosts = $user->post;
+
+        return view('users.posts', compact('allPosts'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -82,8 +89,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect('/')->with('delete', 'User deleted');
     }
 }

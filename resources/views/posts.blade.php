@@ -18,11 +18,11 @@
         <a href="{{route('post.single',['id'=> $post->id])}}">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-            <span class="card-title">{{$post->title}}</span>
+            <span class="card-title">{{substr($post->title,0,20)}}</span>
             <p>{{$post->body}}</p>
             </div>
             <div class="card-action">
-            <a href="#">{{$post->author}}</a>
+            <a href="#">{{substr($post->user->name,0,10)}}</a>
             <a href="#" class="right">{{convert($post->created_at)}}</a>
             </div>
           </div>
